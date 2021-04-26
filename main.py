@@ -4,11 +4,13 @@ tk = Tk()
 
 
 def login_page(root):
-    welcome_lbl = Label(root, text="Welcome, please login").pack(pady=10)
-    usr_name_box = Entry(root).pack(pady=5)
-    password_box = Entry(root).pack(pady=5)
-    reg_button = Button(root, text="Register", command=change_to_reg_page).pack(pady=5)
-    login_button = Button(root, text="Login").pack(pady=5)
+    welcome_lbl = Label(root, text="Welcome, please login").grid(row=0, column=0, columnspan=2, pady=5)
+    usr_name_lbl = Label(tk, text="User ID: ").grid(row=1, column=0, padx=30)
+    usr_name_box = Entry(root).grid(row=1,column=1, pady=10)
+    password_lbl = Label(tk, text="Password: ").grid(row=2, column=0, padx=30)
+    password_box = Entry(root).grid(row=2,column=1, pady=10)
+    reg_button = Button(root, text="Register", command=change_to_reg_page).grid(row=3, column=0, columnspan=2, pady=5)
+    login_button = Button(root, text="Login").grid(row=4, column=0, columnspan=2, pady=5)
     root.geometry("300x300")
 
 
